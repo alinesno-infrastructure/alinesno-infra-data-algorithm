@@ -1,7 +1,7 @@
-package com.alinesno.infra.data.algorithm.api.controller;
+package com.alinesno.infra.data.algorithm.gateway.controller;
 
-import com.alinesno.infra.data.algorithm.entity.SecurityManagementEntity;
-import com.alinesno.infra.data.algorithm.service.ISecurityManagementService;
+import com.alinesno.infra.data.algorithm.entity.ModelsEntity;
+import com.alinesno.infra.data.algorithm.service.IModelsService;
 import com.alinesno.infra.common.core.constants.SpringInstanceScope;
 import com.alinesno.infra.common.facade.pageable.DatatablesPageBean;
 import com.alinesno.infra.common.facade.pageable.TableDataInfo;
@@ -20,26 +20,26 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 处理与SecurityManagementEntity相关的请求的Controller。
- * 继承自BaseController类并实现ISecurityManagementService接口。
+ * 处理与ModelsEntity相关的请求的Controller。
+ * 继承自BaseController类并实现IModelsService接口。
  *
  * @author LuoXiaoDong
  * @version 1.0.0
  */
-@Api(tags = "SecurityManagement")
+@Api(tags = "Models")
 @RestController
 @Scope(SpringInstanceScope.PROTOTYPE)
-@RequestMapping("/api/infra/data/algorithm/security_management")
-public class SecurityManagementController extends BaseController<SecurityManagementEntity, ISecurityManagementService> {
+@RequestMapping("/api/infra/data/algorithm/models")
+public class ModelsController extends BaseController<ModelsEntity, IModelsService> {
 
     // 日志记录
-    private static final Logger log = LoggerFactory.getLogger(SecurityManagementController.class);
+    private static final Logger log = LoggerFactory.getLogger(ModelsController.class);
 
     @Autowired
-    private ISecurityManagementService service;
+    private IModelsService service;
 
     /**
-     * 获取SecurityManagementEntity的DataTables数据。
+     * 获取ModelsEntity的DataTables数据。
      *
      * @param request HttpServletRequest对象。
      * @param model   Model对象。
@@ -54,7 +54,7 @@ public class SecurityManagementController extends BaseController<SecurityManagem
     }
 
     @Override
-    public ISecurityManagementService getFeign() {
+    public IModelsService getFeign() {
         return this.service;
     }
 }

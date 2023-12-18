@@ -1,4 +1,4 @@
-package com.alinesno.infra.data.algorithm.api.controller;
+package com.alinesno.infra.data.algorithm.gateway.controller;
 
 import com.alinesno.infra.data.algorithm.entity.AutomationManagementEntity;
 import com.alinesno.infra.data.algorithm.service.IAutomationManagementService;

@@ -1,7 +1,7 @@
-package com.alinesno.infra.data.algorithm.api.controller;
+package com.alinesno.infra.data.algorithm.gateway.controller;
 
-import com.alinesno.infra.data.algorithm.entity.VersionControlEntity;
-import com.alinesno.infra.data.algorithm.service.IVersionControlService;
+import com.alinesno.infra.data.algorithm.entity.PerformanceEvaluationsEntity;
+import com.alinesno.infra.data.algorithm.service.IPerformanceEvaluationsService;
 import com.alinesno.infra.common.core.constants.SpringInstanceScope;
 import com.alinesno.infra.common.facade.pageable.DatatablesPageBean;
 import com.alinesno.infra.common.facade.pageable.TableDataInfo;
@@ -20,26 +20,26 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 处理与VersionControlEntity相关的请求的Controller。
- * 继承自BaseController类并实现IVersionControlService接口。
+ * 处理与PerformanceEvaluationsEntity相关的请求的Controller。
+ * 继承自BaseController类并实现IPerformanceEvaluationsService接口。
  *
  * @author LuoXiaoDong
  * @version 1.0.0
  */
-@Api(tags = "VersionControl")
+@Api(tags = "PerformanceEvaluations")
 @RestController
 @Scope(SpringInstanceScope.PROTOTYPE)
-@RequestMapping("/api/infra/data/algorithm/version_control")
-public class VersionControlController extends BaseController<VersionControlEntity, IVersionControlService> {
+@RequestMapping("/api/infra/data/algorithm/performance_evaluations")
+public class PerformanceEvaluationsController extends BaseController<PerformanceEvaluationsEntity, IPerformanceEvaluationsService> {
 
     // 日志记录
-    private static final Logger log = LoggerFactory.getLogger(VersionControlController.class);
+    private static final Logger log = LoggerFactory.getLogger(PerformanceEvaluationsController.class);
 
     @Autowired
-    private IVersionControlService service;
+    private IPerformanceEvaluationsService service;
 
     /**
-     * 获取VersionControlEntity的DataTables数据。
+     * 获取PerformanceEvaluationsEntity的DataTables数据。
      *
      * @param request HttpServletRequest对象。
      * @param model   Model对象。
@@ -54,7 +54,7 @@ public class VersionControlController extends BaseController<VersionControlEntit
     }
 
     @Override
-    public IVersionControlService getFeign() {
+    public IPerformanceEvaluationsService getFeign() {
         return this.service;
     }
 }
