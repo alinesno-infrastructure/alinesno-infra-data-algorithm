@@ -1,7 +1,7 @@
-package com.alinesno.infra.data.algorithm.api.controller;
+package com.alinesno.infra.data.algorithm.gateway.controller;
 
-import com.alinesno.infra.data.algorithm.entity.ModelsEntity;
-import com.alinesno.infra.data.algorithm.service.IModelsService;
+import com.alinesno.infra.data.algorithm.entity.VisualizationManagementEntity;
+import com.alinesno.infra.data.algorithm.service.IVisualizationManagementService;
 import com.alinesno.infra.common.core.constants.SpringInstanceScope;
 import com.alinesno.infra.common.facade.pageable.DatatablesPageBean;
 import com.alinesno.infra.common.facade.pageable.TableDataInfo;
@@ -20,26 +20,26 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 处理与ModelsEntity相关的请求的Controller。
- * 继承自BaseController类并实现IModelsService接口。
+ * 处理与VisualizationManagementEntity相关的请求的Controller。
+ * 继承自BaseController类并实现IVisualizationManagementService接口。
  *
  * @author LuoXiaoDong
  * @version 1.0.0
  */
-@Api(tags = "Models")
+@Api(tags = "VisualizationManagement")
 @RestController
 @Scope(SpringInstanceScope.PROTOTYPE)
-@RequestMapping("/api/infra/data/algorithm/models")
-public class ModelsController extends BaseController<ModelsEntity, IModelsService> {
+@RequestMapping("/api/infra/data/algorithm/visualization_management")
+public class VisualizationManagementController extends BaseController<VisualizationManagementEntity, IVisualizationManagementService> {
 
     // 日志记录
-    private static final Logger log = LoggerFactory.getLogger(ModelsController.class);
+    private static final Logger log = LoggerFactory.getLogger(VisualizationManagementController.class);
 
     @Autowired
-    private IModelsService service;
+    private IVisualizationManagementService service;
 
     /**
-     * 获取ModelsEntity的DataTables数据。
+     * 获取VisualizationManagementEntity的DataTables数据。
      *
      * @param request HttpServletRequest对象。
      * @param model   Model对象。
@@ -54,7 +54,7 @@ public class ModelsController extends BaseController<ModelsEntity, IModelsServic
     }
 
     @Override
-    public IModelsService getFeign() {
+    public IVisualizationManagementService getFeign() {
         return this.service;
     }
 }

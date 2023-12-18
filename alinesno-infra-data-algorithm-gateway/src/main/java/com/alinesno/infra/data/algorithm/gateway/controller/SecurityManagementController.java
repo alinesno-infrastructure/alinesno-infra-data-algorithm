@@ -1,7 +1,7 @@
-package com.alinesno.infra.data.algorithm.api.controller;
+package com.alinesno.infra.data.algorithm.gateway.controller;
 
-import com.alinesno.infra.data.algorithm.entity.PerformanceEvaluationsEntity;
-import com.alinesno.infra.data.algorithm.service.IPerformanceEvaluationsService;
+import com.alinesno.infra.data.algorithm.entity.SecurityManagementEntity;
+import com.alinesno.infra.data.algorithm.service.ISecurityManagementService;
 import com.alinesno.infra.common.core.constants.SpringInstanceScope;
 import com.alinesno.infra.common.facade.pageable.DatatablesPageBean;
 import com.alinesno.infra.common.facade.pageable.TableDataInfo;
@@ -20,26 +20,26 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 处理与PerformanceEvaluationsEntity相关的请求的Controller。
- * 继承自BaseController类并实现IPerformanceEvaluationsService接口。
+ * 处理与SecurityManagementEntity相关的请求的Controller。
+ * 继承自BaseController类并实现ISecurityManagementService接口。
  *
  * @author LuoXiaoDong
  * @version 1.0.0
  */
-@Api(tags = "PerformanceEvaluations")
+@Api(tags = "SecurityManagement")
 @RestController
 @Scope(SpringInstanceScope.PROTOTYPE)
-@RequestMapping("/api/infra/data/algorithm/performance_evaluations")
-public class PerformanceEvaluationsController extends BaseController<PerformanceEvaluationsEntity, IPerformanceEvaluationsService> {
+@RequestMapping("/api/infra/data/algorithm/security_management")
+public class SecurityManagementController extends BaseController<SecurityManagementEntity, ISecurityManagementService> {
 
     // 日志记录
-    private static final Logger log = LoggerFactory.getLogger(PerformanceEvaluationsController.class);
+    private static final Logger log = LoggerFactory.getLogger(SecurityManagementController.class);
 
     @Autowired
-    private IPerformanceEvaluationsService service;
+    private ISecurityManagementService service;
 
     /**
-     * 获取PerformanceEvaluationsEntity的DataTables数据。
+     * 获取SecurityManagementEntity的DataTables数据。
      *
      * @param request HttpServletRequest对象。
      * @param model   Model对象。
@@ -54,7 +54,7 @@ public class PerformanceEvaluationsController extends BaseController<Performance
     }
 
     @Override
-    public IPerformanceEvaluationsService getFeign() {
+    public ISecurityManagementService getFeign() {
         return this.service;
     }
 }
